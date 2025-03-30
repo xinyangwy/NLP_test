@@ -140,24 +140,6 @@ N-Gram是一种基于统计语言模型的算法。它的基本思想是将文�
 
 2、核心代码：
 
-def build_ngram_word(content, word_length):
-
-for i in range(0, len(content) - word_length + 1):
-
-word = \"\".join(content\[i:i + word_length\])
-
-if re.findall(\'\[\^\\u4e00-\\u9fa5\]\', word):
-
-continue
-
-if word_length == 1:
-
-OneWord.append(word)
-
-if word_length == 2:
-
-TwoWord.append(word)
-
 如果单个的分词含有"非中文"，则跳过（re.findall返回的是一个列表，"列表为空"在if语句中即代表false；正则表达式匹配的是\"非中文\"）
 
 ![绘图7](./media/image1.png){width="4.5in" height="5.121527777777778in"}
